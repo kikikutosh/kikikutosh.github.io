@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨后的小故事动态图-治愈系雨景GIF与温暖小故事合集</title>
+    <meta name="description" content="雨后的小故事动态图专题，精选雨后的街道、车窗、绿叶等唯美动态图片，搭配简短治愈的文字小故事，带你感受雨后世界的清新与宁静。">
+    <meta name="keywords" content="雨后的小故事动态图,雨后动态图,雨后小故事,治愈系动态图,雨景GIF,温暖小故事">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            line-height: 1.75;
+        }
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background-color: #2c3e50;
+            padding: 0;
+            color: #ecf0f1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .logo-text p {
+            font-size: 13px;
+            color: #aab7c4;
+            margin-top: 2px;
+        }
+        .header-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: #d5dbdf;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .header-nav a:hover {
+            color: #ffffff;
+            border-bottom-color: #6ab0de;
+        }
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(145deg, #d4e6f1 0%, #a9cce3 100%);
+            border-radius: 16px;
+            margin: 28px 0 32px;
+            padding: 40px 36px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+        }
+        .hero-content {
+            flex: 1 1 300px;
+        }
+        .hero-content h2 {
+            font-size: 30px;
+            color: #1a3b4f;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .hero-content p {
+            font-size: 17px;
+            color: #2c3e50;
+            max-width: 520px;
+            margin-bottom: 20px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #2c3e50;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .hero-emoji {
+            font-size: 90px;
+            margin-right: 30px;
+            opacity: 0.7;
+            text-align: center;
+        }
+        /* Section title */
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            padding-left: 14px;
+            border-left: 6px solid #6ab0de;
+            color: #1e3c51;
+            display: flex;
+            align-items: center;
+        }
+        .section-title span {
+            font-size: 15px;
+            font-weight: 400;
+            color: #6c7a89;
+            margin-left: 12px;
+        }
+        /* GIF Cards */
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .gif-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .gif-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .gif-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #b8d4e8, #d7e7f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: #4a6b7f;
+            position: relative;
+        }
+        .gif-img .sim-gif {
+            background: rgba(255,255,255,0.8);
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-size: 13px;
+            color: #2c3e50;
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+        .gif-info {
+            padding: 16px;
+        }
+        .gif-info h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #2c3e50;
+        }
+        .gif-info p {
+            font-size: 14px;
+            color: #5f6f7e;
+            line-height: 1.5;
+        }
+        .story-tag {
+            display: inline-block;
+            margin-top: 8px;
+            background: #e8f1f8;
+            color: #2c6b9e;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        /* Stories */
+        .story-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .story-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 4px solid #9cc2d9;
+        }
+        .story-item h3 {
+            font-size: 18px;
+            color: #1e3c51;
+            margin-bottom: 8px;
+        }
+        .story-item p {
+            font-size: 15px;
+            color: #3a4a5a;
+            margin-bottom: 6px;
+        }
+        .story-meta {
+            font-size: 13px;
+            color: #8b9bab;
+        }
+        /* 场景分类 */
+        .scene-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 10px;
+        }
+        .scene-pill {
+            background: #e2ebf3;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        /* 小贴士 */
+        .tips-box {
+            background: #e8f0f7;
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin: 30px 0;
+            border: 1px solid #cbdae6;
+        }
+        .tips-box h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1e3c51;
+        }
+        .tips-box ul {
+            padding-left: 20px;
+        }
+        .tips-box li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        /* FAQ */
+        .faq-section {
+            margin: 30px 0;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+        }
+        .faq-item h3 {
+            font-size: 16px;
+            color: #1e3c51;
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: #556575;
+        }
+        /* Footer */
+        .site-footer {
+            background: #2c3e50;
+            color: #9fb3c1;
+            margin-top: 50px;
+            padding: 28px 0 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .site-footer p {
+            margin-bottom: 6px;
+        }
+        .footer-links {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #b8c9d4;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .header-nav ul {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .hero-section {
+                padding: 28px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-emoji {
+                font-size: 60px;
+                margin: 20px 0 0 0;
+            }
+            .gif-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 16px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .gif-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo-text h1 {
+                font-size: 18px;
+            }
+            .hero-content h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">🌧️</div>
+                <div class="logo-text">
+                    <h1>雨后的小故事动态图</h1>
+                    <p>治愈系雨景与温柔片刻</p>
+                </div>
+            </div>
+            <nav class="header-nav" aria-label="主导航">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">动态图库</a></li>
+                    <li><a href="#">小故事</a></li>
+                    <li><a href="#">雨景专题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+        <!-- 首屏 Hero -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>雨后，世界安静下来的瞬间</h2>
+                <p>每一滴雨水落下又停歇，留下湿润的路面、透亮的叶片、和那些微小的故事。这里收集关于雨后的动态图片与短篇故事，适合在放空时打开。</p>
+                <span class="hero-badge">✨ 持续收录 · 温暖治愈</span>
+            </div>
+            <div class="hero-emoji">☔</div>
+        </section>
+
+        <!-- 场景分类胶囊 -->
+        <div class="scene-pills">
+            <span class="scene-pill">🌿 雨后街道</span>
+            <span class="scene-pill">🪟 窗台雨滴</span>
+            <span class="scene-pill">🍃 湿润绿叶</span>
+            <span class="scene-pill">👣 水洼倒影</span>
+            <span class="scene-pill">🚶 撑伞的人</span>
+            <span class="scene-pill">🌙 雨后黄昏</span>
+        </div>
+
+        <!-- 动态图精选 -->
+        <h2 class="section-title">精选雨后动态图 <span>轻柔循环 · 适合凝视</span></h2>
+        <div class="gif-grid">
+            <article class="gif-card">
+                <div class="gif-img">
+                    🌧️💧
+                    <span class="sim-gif">动态 GIF</span>
+                </div>
+                <div class="gif-info">
+                    <h3>雨滴从屋檐滑落</h3>
+                    <p>雨渐渐停止，最后几颗水珠沿着瓦片慢慢滚落，在石阶上溅开。</p>
+                    <span class="story-tag">#微距</span>
+                </div>
+            </article>
+            <article class="gif-card">
+                <div class="gif-img">
+                    🍃💦
+                    <span class="sim-gif">动态 GIF</span>
+                </div>
+                <div class="gif-info">
+                    <h3>绿叶上的水珠</h3>
+                    <p>雨后的叶脉清晰可见，水珠随着微风轻轻晃动，像一颗透明的星球。</p>
+                    <span class="story-tag">#植物</span>
+                </div>
+            </article>
+            <article class="gif-card">
+                <div class="gif-img">
+                    🌫️🚶
+                    <span class="sim-gif">动态 GIF</span>
+                </div>
+                <div class="gif-info">
+                    <h3>湿润的街道与倒影</h3>
+                    <p>路灯亮起，行人的影子倒映在积水里，每一步都踩碎了光。</p>
+                    <span class="story-tag">#街景</span>
+                </div>
+            </article>
+            <article class="gif-card">
+                <div class="gif-img">
+                    🪟🌧️
+                    <span class="sim-gif">动态 GIF</span>
+                </div>
+                <div class="gif-info">
+                    <h3>窗玻璃上的雨痕</h3>
+                    <p>雨停后，窗上还留着蜿蜒的水痕，屋内的灯光显得格外温暖。</p>
+                    <span class="story-tag">#居家</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- 小故事栏 -->
+        <h2 class="section-title">雨后的小故事 <span>图片之外 · 文字的温度</span></h2>
+        <div class="story-list">
+            <article class="story-item">
+                <h3>☔ 一把伞的交接</h3>
+                <p>雨刚刚停，公交站台旁，一个女孩把伞递给没带伞的老人。老人摆摆手说不用了，雨小了。女孩还是把伞塞进他手里，转身跑进细密的雨丝里。</p>
+                <p class="story-meta">—— 来自某个雨后傍晚的真实片段</p>
+            </article>
+            <article class="story-item">
+                <h3>🌱 水洼里的天空</h3>
+                <p>小朋友穿着雨靴，专门去踩水洼。每踩一下，倒映的天空就碎成一片，然后又慢慢拼回来。他笑了很多次，好像发现了世界上最有趣的玩具。</p>
+                <p class="story-meta">—— 童年记忆</p>
+            </article>
+            <article class="story-item">
+                <h3>🏠 晾在阳台的衬衫</h3>
+                <p>出门前忘了收衣服，回来时却发现雨已经停过，衬衫被风吹得半干，散发着一股雨后特有的清爽气味。有时候，错过反而刚刚好。</p>
+                <p class="story-meta">—— 生活小事</p>
+            </article>
+            <article class="story-item">
+                <h3>🚲 单车与积水</h3>
+                <p>他骑着单车穿过那条熟悉的巷子，车轮碾过积水，溅起一道弧线。耳机里正好放到喜欢的歌，雨后的空气让人想一直骑下去。</p>
+                <p class="story-meta">—— 城市漫游</p>
+            </article>
+        </div>
+
+        <!-- 使用与收藏小贴士 -->
+        <aside class="tips-box">
+            <h3>📌 关于雨后动态图的小贴士</h3>
+            <ul>
+                <li>动态图适合用来做聊天背景、朋友圈配图或电脑桌面，建议选择画面节奏舒缓的类型。</li>
+                <li>雨后的素材大多色调偏蓝、灰、绿，搭配暖色文字或贴纸能增加治愈感。</li>
+                <li>如果用于视频剪辑，可将动态图放慢速度，并叠加轻微雨声白噪音，氛围感更强。</li>
+                <li>真正动人的不只是画面，还有雨后那种“一切刚刚洗过”的清新心情。</li>
+            </ul>
+        </aside>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-item">
+                <h3>雨后的小故事动态图一般在哪里找？</h3>
+                <p>可以在图片社区、GIF 搜索引擎或社交平台中搜索“雨后”、“rain after”、“雨滴”等关键词。注意部分图片有版权，个人使用问题不大，商用需确认授权。</p>
+            </div>
+            <div class="faq-item">
+                <h3>这些动态图可以保存到手机吗？</h3>
+                <p>可以。长按图片或右键另存即可，部分网站支持直接下载原图。动态图格式通常为 GIF，部分为 WebP 或 APNG，保存后可在相册中查看。</p>
+            </div>
+            <div class="faq-item">
+                <h3>怎么把动态图变成视频？</h3>
+                <p>使用视频剪辑软件（如剪映、PR）将 GIF 导入时间线，导出为 MP4 即可。也可以使用在线转换工具，但要注意分辨率可能有所下降。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">动态图推荐</a>
+            <a href="#">联系合作</a>
+            <a href="#">隐私说明</a>
+        </div>
+        <p>🌧️ 雨后的小故事动态图 · 收集每一场雨后的温柔</p>
+        <p>© 2024 rainstory-gif 本站仅为静态展示，不存储任何图片文件</p>
+    </footer>
+</body>
+</html>
