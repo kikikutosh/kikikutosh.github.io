@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都邪君-都市邪君传奇小说阅读与书评社区</title>
+    <meta name="description" content="花都邪君是热门都市异能题材小说，讲述主角在繁华都市中身怀绝技、纵横花都的传奇故事。提供小说简介、人物关系、章节导读、书友评论与阅读指南。">
+    <meta name="keywords" content="花都邪君,都市小说,邪君,异能小说,小说阅读,书评,主角,花都">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f1e8;
+            color: #2e241f;
+            line-height: 1.7;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(145deg, #1f1a16, #2e241f);
+            padding: 18px 0;
+            border-bottom: 3px solid #c8a96a;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: #e9d6a7;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .brand span {
+            color: #c8a96a;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #d9cbb8;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #f0e0c0;
+            border-bottom-color: #c8a96a;
+        }
+        .nav-links .active {
+            color: #f0e0c0;
+            border-bottom-color: #c8a96a;
+        }
+        /* 首屏 Hero */
+        .hero {
+            background: linear-gradient(135deg, #3a2c22 0%, #1f1a16 100%);
+            padding: 56px 0;
+            margin-bottom: 44px;
+            border-bottom: 1px solid #c8a96a;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: radial-gradient(circle, #c8a96a 20%, transparent 70%);
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 380px;
+        }
+        .hero-text h1 {
+            font-size: 48px;
+            color: #e9d6a7;
+            font-weight: 800;
+            letter-spacing: 6px;
+            margin-bottom: 12px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+        }
+        .hero-text .tagline {
+            font-size: 20px;
+            color: #cbb89e;
+            margin-bottom: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .hero-text p {
+            color: #d8cbb8;
+            max-width: 520px;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background: #c8a96a;
+            color: #1f1a16;
+            box-shadow: 0 4px 12px rgba(200,169,106,0.3);
+        }
+        .btn-primary:hover {
+            background: #dabd82;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #c8a96a;
+            border-color: #c8a96a;
+        }
+        .btn-outline:hover {
+            background: rgba(200,169,106,0.1);
+        }
+        .hero-cover {
+            flex: 0 0 240px;
+            text-align: center;
+        }
+        .book-cover {
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(145deg, #4a382c, #2e241f);
+            border-radius: 8px 20px 8px 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #c8a96a;
+            color: #e9d6a7;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            padding: 20px 8px;
+        }
+        /* 通用栏目 */
+        .section {
+            margin-bottom: 56px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2e241f;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c8a96a;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        .section-title small {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7a6a5c;
+        }
+        .intro-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .intro-card {
+            background: #fffaf2;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            border-left: 4px solid #c8a96a;
+        }
+        .intro-card h3 {
+            color: #3a2c22;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .intro-card p {
+            color: #5a4a3c;
+            font-size: 15px;
+        }
+        /* 人物网格 */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .char-item {
+            background: #fffaf2;
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+        }
+        .char-item:hover {
+            transform: translateY(-4px);
+        }
+        .char-avatar {
+            width: 70px;
+            height: 70px;
+            background: #3a2c22;
+            color: #e9d6a7;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            border: 2px solid #c8a96a;
+        }
+        .char-item h4 {
+            font-size: 17px;
+            color: #2e241f;
+        }
+        .char-item .role {
+            font-size: 13px;
+            color: #8a7a6a;
+            margin-top: 2px;
+        }
+        .char-item p {
+            font-size: 13px;
+            color: #5a4a3c;
+            margin-top: 8px;
+            text-align: left;
+        }
+        /* 章节导读列表 */
+        .chapter-list {
+            background: #fffaf2;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 22px;
+            border-bottom: 1px solid #e8dfd2;
+            transition: background 0.15s;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+        .chapter-item:hover {
+            background: #f6efe4;
+        }
+        .chapter-name {
+            font-weight: 600;
+            color: #3a2c22;
+        }
+        .chapter-desc {
+            color: #7a6a5c;
+            font-size: 14px;
+            flex: 1;
+            min-width: 200px;
+            padding: 0 12px;
+        }
+        .chapter-tag {
+            background: #c8a96a20;
+            color: #8a6d3b;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid #c8a96a;
+        }
+        /* 书评卡片 */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .review-card {
+            background: #fffaf2;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-top: 3px solid #c8a96a;
+        }
+        .review-card .stars {
+            color: #d4a93c;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .review-card blockquote {
+            font-style: italic;
+            color: #4a3a2c;
+            border-left: 3px solid #c8a96a;
+            padding-left: 14px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        .review-author {
+            font-size: 13px;
+            color: #7a6a5c;
+            text-align: right;
+        }
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 14px;
+        }
+        .faq-item {
+            background: #fffaf2;
+            border-radius: 10px;
+            padding: 18px 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .faq-q {
+            font-weight: 700;
+            color: #2e241f;
+            font-size: 16px;
+            margin-bottom: 6px;
+            display: flex;
+            gap: 8px;
+        }
+        .faq-q::before {
+            content: "Q";
+            background: #c8a96a;
+            color: #1f1a16;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .faq-a {
+            color: #5a4a3c;
+            padding-left: 32px;
+            font-size: 15px;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #1f1a16;
+            color: #a09080;
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 40px;
+            border-top: 2px solid #c8a96a;
+        }
+        .site-footer p {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .site-footer .copyright {
+            opacity: 0.7;
+            font-size: 13px;
+        }
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .char-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .review-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .intro-cards {
+                grid-template-columns: 1fr;
+            }
+            .char-grid {
+                grid-template-columns: 1fr;
+            }
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 12px;
+                margin-top: 10px;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+            .book-cover {
+                width: 150px;
+                height: 220px;
+                font-size: 20px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <div class="brand">花都<span>邪君</span></div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">小说简介</a>
+                <a href="#">人物图鉴</a>
+                <a href="#">章节导读</a>
+                <a href="#">书友评论</a>
+                <a href="#">阅读指南</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrapper hero-grid">
+            <div class="hero-text">
+                <h1>花都邪君</h1>
+                <div class="tagline">都市浮华 · 邪君纵横</div>
+                <p>一部融合都市权谋、热血打斗与红颜情仇的异能传奇。主角从底层崛起，在花都的灯红酒绿中，以邪魅手段与一身绝学，搅动风云，书写属于他的法则。</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary">开始阅读</a>
+                    <a href="#" class="btn btn-outline">查看书评</a>
+                </div>
+            </div>
+            <div class="hero-cover">
+                <div class="book-cover">花都邪君</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="wrapper">
+        <!-- 作品速览 -->
+        <section class="section">
+            <h2 class="section-title">作品速览 <small>一分钟了解花都邪君</small></h2>
+            <div class="intro-cards">
+                <div class="intro-card">
+                    <h3>📖 故事背景</h3>
+                    <p>故事发生在现代大都市“花都”，表面繁华似锦，实则暗流汹涌。各方势力盘踞，地下秩序与商业帝国交织。主角身负神秘传承，以玩世不恭的外表示人，却总在关键时刻展露惊天手段。</p>
+                </div>
+                <div class="intro-card">
+                    <h3>⚔️ 核心看点</h3>
+                    <p>不仅仅是打斗升级，更侧重智斗与布局。主角游走在黑白两道，与多位性格迥异的女主角产生交集。既有酣畅淋漓的对决，也有细腻的情感纠葛，以及层层揭开的身世之谜。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要人物 -->
+        <section class="section">
+            <h2 class="section-title">主要人物 <small>记住这些名字</small></h2>
+            <div class="char-grid">
+                <div class="char-item">
+                    <div class="char-avatar">君</div>
+                    <h4>林邪</h4>
+                    <div class="role">主角 · 邪君</div>
+                    <p>表面是普通大学生/职员，实际身怀绝学，性格邪魅不羁，重情重义，对敌人毫不留情，对朋友与爱人却极尽守护。</p>
+                </div>
+                <div class="char-item">
+                    <div class="char-avatar">雪</div>
+                    <h4>苏凝雪</h4>
+                    <div class="role">冰山总裁</div>
+                    <p>商界女强人，高冷睿智，与主角在多次交锋中产生微妙情愫，是花都最具权势的女性之一。</p>
+                </div>
+                <div class="char-item">
+                    <div class="char-avatar">火</div>
+                    <h4>火凤</h4>
+                    <div class="role">神秘组织成员</div>
+                    <p>身手矫健，身份成谜，与主角亦敌亦友，身上背负着与主角身世相关的秘密。</p>
+                </div>
+                <div class="char-item">
+                    <div class="char-avatar">老</div>
+                    <h4>鬼手</h4>
+                    <div class="role">前辈 · 引路人</div>
+                    <p>教会主角本事的神秘老人，看似疯癫，实则通晓古今，为主角提供了最初的江湖指引。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 章节导读 -->
+        <section class="section">
+            <h2 class="section-title">精选章节导读 <small>快速找到精彩剧情</small></h2>
+            <div class="chapter-list">
+                <div class="chapter-item">
+                    <span class="chapter-name">第一章 · 花都初临</span>
+                    <span class="chapter-desc">主角初到花都，遭遇街头冲突，展露不凡身手，与苏凝雪首次相遇。</span>
+                    <span class="chapter-tag">开篇</span>
+                </div>
+                <div class="chapter-item">
+                    <span class="chapter-name">第十五章 · 夜探会所</span>
+                    <span class="chapter-desc">为救朋友，孤身潜入地下会所，与火凤交手，发现背后势力不简单。</span>
+                    <span class="chapter-tag">冲突</span>
+                </div>
+                <div class="chapter-item">
+                    <span class="chapter-name">第三十二章 · 商业暗战</span>
+                    <span class="chapter-desc">苏凝雪公司遭遇恶意收购，主角以非常手段搅局，展现商业头脑。</span>
+                    <span class="chapter-tag">智斗</span>
+                </div>
+                <div class="chapter-item">
+                    <span class="chapter-name">第五十章 · 身世疑云</span>
+                    <span class="chapter-desc">鬼手透露线索，主角的身世与二十年前的花都大事件有关。</span>
+                    <span class="chapter-tag">主线</span>
+                </div>
+                <div class="chapter-item">
+                    <span class="chapter-name">第七十二章 · 邪君之名</span>
+                    <span class="chapter-desc">主角为守护重要之人，正式亮出“邪君”身份，震动花都。</span>
+                    <span class="chapter-tag">高潮</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 书友评论 -->
+        <section class="section">
+            <h2 class="section-title">书友热评 <small>来自读者真实的声音</small></h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>“好久没看到这么对味的都市文了，主角够邪够强，但又不无脑，苏凝雪那段真的绝了。”</blockquote>
+                    <div class="review-author">—— 书友@夜雨声烦</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <blockquote>“打斗描写很有画面感，智斗部分也不降智。就是更新能不能再快点，等得心痒痒！”</blockquote>
+                    <div class="review-author">—— 书友@花都老猫</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>“人物塑造很成功，尤其是火凤，神秘感拉满，期待她的身世揭秘。鬼手老爷子也是一大亮点。”</blockquote>
+                    <div class="review-author">—— 书友@青衫不改</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 阅读指南与FAQ -->
+        <section class="section">
+            <h2 class="section-title">阅读指南与常见问题 <small>帮你更好地享受本书</small></h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">这本书属于什么类型？适合什么读者？</div>
+                    <div class="faq-a">《花都邪君》是都市异能加热血爽文，喜欢主角强势、智勇双全、且带有后宫与江湖气息的读者会非常对味。节奏明快，不拖沓。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">目前更新状态如何？在哪里可以阅读到正版？</div>
+                    <div class="faq-a">请关注官方小说平台或授权渠道，以获取最新章节和正版内容。本站仅提供介绍与导读，不提供盗版资源。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">主角的“邪”具体体现在哪些方面？</div>
+                    <div class="faq-a">他的行事风格不拘一格，不按常理出牌，对敌人绝不心慈手软，但有自己的底线与准则。邪而不恶，傲而不骄，是其魅力所在。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">书中有没有比较虐心的情节？</div>
+                    <div class="faq-a">整体以爽快为主，但为了让角色更加立体，某些关键剧情会带有情感张力，不过最终都会走向希望与圆满。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>花都邪君 · 都市邪君传奇小说专题站</p>
+            <p class="copyright">本页面为爱好者制作，仅用于作品介绍与交流。版权归原作者及出版方所有。</p>
+        </div>
+    </footer>
+</body>
+</html>
